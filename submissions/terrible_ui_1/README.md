@@ -1,6 +1,7 @@
-## Terrible UI Hackathon #1 (April 1 6:00PM EST)
+## Terrible UI Hackathon #1
 
 ```
+When: 4/01/22 @ 6:00PM EST
 Challenge: Build the worst Date/Time Selector
 ```
 
@@ -12,21 +13,23 @@ The hackathon is hosted on Discord [[Invite Link](https://discord.com/invite/kqt
 
 ## Schedule
 
-### Friday @ 6:00pm
+The hackathon starts Friday 4/1/22 at 6:00pm. All submissions are due Saturday 4/2/22 6:00pm.
 
-    Hop on discord, introduce yourselves, find a partner or work solo.
+#### Friday @ 6:00pm
 
-### Next 24 hours
+    Hop on discord, introduce yourselves, work solo or with a friend.
+
+#### Next 24 hours
 
     GET HACKING
 
-### Saturday @ 6:00pm
+#### Saturday @ 6:00pm
 
     Submit your solution for judging.
 
-### Saturday @ 8:00pm
+#### Saturday @ 8:00pm
 
-    Join the Discord to vote on winners!
+    Join the live stream on Discord to see the winners.
 
 ## Submissions
 

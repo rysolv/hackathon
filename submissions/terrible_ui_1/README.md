@@ -1,11 +1,3 @@
-# Past
-
--   nothing here yet
-
-# Upcoming
-
-![pic](./assets/terrible_ui.png)
-
 ## Terrible UI Hackathon #1 (April 1 6:00PM EST)
 
 ```

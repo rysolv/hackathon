@@ -19,7 +19,12 @@ Come join us April 1 to build the worst UI features you can imagine! Inspired by
 
 ## How to join
 
-The hackathon is hosted on Discord [[Invite Link](https://discord.com/invite/kqt8rcvggn])].
+The hackathon is hosted on Discord (https://discord.com/invite/kqt8rcvggn).
+
+-   Join the server
+-   Click "Events" and mark yourself as interested
+
+Don't have discord, no problem. Just submit a PR following the #submission instructions before the deadline and you're good to go.
 
 ## Schedule
 

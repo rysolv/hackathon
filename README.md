@@ -88,3 +88,7 @@ The hackathon starts Friday 4/1/22 at 6:00pm. All submissions are due Saturday 4
     - Create a pull request from your fork. You can follow these [instructions](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
 
 6. That's it!
+
+## Problems?
+
+Best bet is to ask in the Discord. But feel free to email tyler@rysolv.com as well. 

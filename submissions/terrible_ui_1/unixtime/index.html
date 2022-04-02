@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>TIME</title>
+</head>
+<body>
+    <h1>Select a time that works best</h1>
+    <p>Time selection is in Unix time stamp for more precision!</p>
+    <form>
+        <p id="dateTimeDisplay">0</p>
+        <input type="range" id="date-time" name="date-time" min="-2208970800" max="7258136400" value="0" step="1" />
+        <button type="submit" onclick="verifyInput()">Submit</button>
+    </form>
+    <section>
+        <h2>Unix timestamp parsing (trial version)</h2>
+        <p id="free-trial">You have 5 remaining free uses.</p>
+        <p id="unlock-now">Unlock unlimited use <span class="flashing">now!!</span></p>
+        <button onclick="parseTime()" id="parse-time-btn">parse time</button>
+        <button id="submit-time" onclick="submitTime()" >Submit Time</button>
+        <p id="parsed-time"></p>
+    </section>
+    <div class="popup">
+        <div class="popup-content">
+            <button id="close-popup" onclick='closePopup()'>&times;</button>
+            <p>Click <a href="#">HERE</a> to subscribe for unlimited unix time parser!</p>
+            <p id="popup-text">Only $9.99/month!</p>
+            <button id="buy-now">Buy Now</button>
+        </div>
+    </div>
+</body>
+<script>
+    let freeTrial = 5;
+    let dateSubmit = 0;
+    const freeTrialNum = document.getElementById('free-trial');
+    const dateTimeRange = document.getElementById('date-time');
+    const dateTimeDisplay = document.getElementById('dateTimeDisplay');
+    const parsedTime = document.getElementById('parsed-time');
+    const parseTimeBtn = document.getElementById('parse-time-btn');
+    const dateTimeFormat = document.getElementById('date-time-format');
+    const popup = document.querySelector('.popup');
+    dateTimeRange.addEventListener('input', changeDisplay, false);
+
+    function changeDisplay() {
+        dateTimeDisplay.innerText = dateTimeRange.value;
+        dateSubmit = dateTimeRange.value.toLocaleString();
+    }
+
+    function verifyInput() {
+        window.alert("Please submit the time in the correct format: MM/DD/YYYY HH:MM:SS AM(PM). You Submitted: " + dateTimeRange.value);
+    }
+
+    function parseTime() {
+        let time = dateTimeRange.value;
+        let date = new Date(time * 1000);
+        dateSubmit = date.toLocaleString();
+        parsedTime.innerText = dateSubmit;
+        if (freeTrial > 1) {
+            freeTrial--;
+            freeTrialNum.innerText = 'You have ' + freeTrial + ' remaining free uses.';
+        } else {
+            popup.style.display = 'flex';
+            freeTrialNum.innerText = "You have no remaining free uses. Please buy the subscription plan before continue using";
+            parseTimeBtn.disabled = true;
+        }
+    }
+
+    function submitTime() {
+        if(dateSubmit) {
+            window.alert("You submitted: " + dateSubmit);
+        } else {
+            window.alert("There is no time to submit");
+        }
+    }
+
+    function closePopup() {
+        popup.style.display = 'none';
+    }
+</script>
+</html> 

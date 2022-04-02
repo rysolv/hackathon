@@ -1,0 +1,11 @@
+{
+	"name": "Unix Time Stamp selector",
+	"description": "a more precise date/time selector for terrible_ui hackathon",
+	"link": "https://strong-basbousa-dcb2c2.netlify.app/",
+	"contributors": [
+		{
+			"name": "Yingyi Mo",
+			"github": "https://github.com/yingmo55"
+		}
+	]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "hot-or-cold",
+  "description": "terrible user experience date picker",
+  "link": "",
+  "contributors": [
+    {
+      "name": "Cody Backus",
+      "github": "https://github.com/codyback"
+    }
+  ]
+}

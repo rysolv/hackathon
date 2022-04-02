@@ -9,7 +9,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Cedarville+Cursive&family=Love+Light&family=Press+Start+2P&family=Rubik+Glitch&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik+Glitch&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 
@@ -22,6 +22,9 @@
 
     <section id="zodiac-picker">
         <h2>Select the sign with the correct date range:</h2>
+        <p>
+            <button id="reveal-dates-btn">Show date ranges</button>
+        </p>
         <div id="zodiac-signs">
             <img id="aries" src="assets/aries.png">
             <img id="taurus" src="assets/taurus.png">
@@ -35,10 +38,8 @@
             <img id="capricorn" src="assets/capricorn.png">
             <img id="aquarius" src="assets/aquarius.png">
             <img id="pisces" src="assets/pisces.png">
+            <div id="zodiac-alert" class="hidden"></div>
         </div>
-        <p>
-            <button id="reveal-dates-btn">Show date ranges</button>
-        </p>
     </section>
 
     <section id="day-picker" class="hidden">
@@ -50,13 +51,12 @@
         <h2>Select the time of day:</h2>
         <p id="random-time"></p>
         <p>
-            <button id="early">Too early</button> <button id="late">Too late</button> <button id="approve-time">This is the correct time!</button>
+            <button id="early">Too early</button> <button id="late">Too late</button> <button id="approve-time">This is the correct time</button>
         </p>
     </section>
 
     <section id="results" class="hidden">
-        <p>Your result is: <span id="final-date-time"></span></p>
-        <button id="clear-all">Try again?</button>
+        <p>You have chosen: <span id="final-date-time"></span> <button id="clear-all">Try again?</button></p>
     </section>
 
 

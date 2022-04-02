@@ -29,6 +29,10 @@ body {
     font-size: 3rem;
 }
 
+#timerOutput {
+    text-align: center;
+}
+
 .board {
     margin-bottom: 35px;
 }
@@ -36,7 +40,7 @@ body {
 table, th, td {
     border: 1px solid white;
     border-collapse: collapse;
-    cursor: no-drop;
+    cursor: pointer;
 }
 
 th, td {

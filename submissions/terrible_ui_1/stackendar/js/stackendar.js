@@ -28,7 +28,7 @@ class Board {
             this.completed = true;
         }
         else if(gameState == this.STATE_LOSS) {
-            document.getElementById("gameStatusOutput").textContent = "You lose!";
+            document.getElementById("gameStatusOutput").textContent = "You lost! Please try again.";
     
             toggleGameState();
         }
@@ -218,9 +218,16 @@ let gameStarted = false;
 let gameRunning = false;
 let focused = true;
 
+let timer;
+let seconds = 0, milliseconds = 0;
+
 let monthValues = [[1, 2, 3, 4],
                    [5, 6, 7, 8],
                    [9, 10, 11, 12]];
+
+let monthNames = ["January", "February", "March", "April",
+                  "May", "June", "July", "August", 
+                  "September", "October", "November", "December"];
 
 let dayValues = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
                   [17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]];
@@ -245,6 +252,10 @@ let boards = [board1, board2, board3];
 let continueButton = document.getElementById("continue");
 let statusOutput = document.getElementById("gameStatusOutput");
 let timeOutput = document.getElementById("timeOutput");
+
+let month = "";
+let day   = "";
+let year  = "";
 
 function update() {
     if(focused) {
@@ -279,8 +290,17 @@ function keyPress() {
 function addTimeToOutput(board, won) {
     let row = board.getHighestRowId(won);
     let col = board.getHighestColId(won);
-    console.log(board.name);
-    timeOutput.textContent += board.getValue(row, col);
+
+    // Return the alphabetical month name if the first board is being processed
+    if(board.name == "month") {
+        month = monthNames[board.getValue(row, col) -1];
+    }
+    else if(board.name == "day") {
+        day = board.getValue(row, col);
+    }
+    else if(board.name == "year") {
+        year = board.getValue(row, col);
+    }
     
 }
 
@@ -295,16 +315,35 @@ function toggleButtons(running) {
     }
 }
 
-function toggleGameState() {
+function toggleGameState(outputDate = false) {
     if(gameRunning) {
         for(let i = 0; i < boards.length; i++) {
             boards[i].completed = true;
         }
 
-        timeOutput.innerHTML = "";
+        // Output the date if the game is won
+        if(outputDate) {
+            let minutes = 0, hour = 0, ampm = "";
+
+            if((milliseconds / 10) >= 60) {
+                hour++;
+                milliseconds -= 600;
+                console.log(milliseconds);
+                minutes = milliseconds % 100;
+            }
+            else {
+                minutes = milliseconds % 100;
+            }
+
+            //let minutes = ((milliseconds / 10) >= 60 ?);
+            hour += (seconds > 60 ? seconds - 60 : seconds);
+            ampm = (seconds > 60 ? "pm" : "am");
+            timeOutput.textContent = "Selected date/time: " + (month + " " + day + ", " + year) + " " + hour + ":" + minutes + ampm;
+        }
 
         gameRunning = false;
 
+        pauseTimer();
         toggleButtons(false);
     }
     else {
@@ -313,12 +352,24 @@ function toggleGameState() {
                 boards[i].reset();
             }
 
-            statusOutput.innerHTML = "";
+            statusOutput.textContent = "";
+            timeOutput.textContent   = "";
         }
 
         start();
         toggleButtons(true);
     }
+}
+
+function allBoardsCompleted() {
+    let b = true;
+    for(let i = 0; i < boards.length; i++) {
+        if(!boards[i].completed) {
+            b = false;
+        }
+    }
+
+    return b;
 }
 
 function nextBoard() {
@@ -329,12 +380,46 @@ function nextBoard() {
     addTimeToOutput(b, false);
 
     for(let i = 0; i < b.cols; i++) {
-        console.log("removing " + b.name + "_" + (((row - 1) * b.cols) + i));
         document.getElementById(b.name + "_" + (((row - 1) * b.cols) + i)).classList.remove("selected");
     }
 
     b.completed = true;
     continueButton.disabled = true;
+
+    if(allBoardsCompleted()) {
+        toggleGameState(true);
+    }
+}
+
+// Timer functions below referenced from https://dev.to/walternascimentobarroso/creating-a-timer-with-javascript-8b7
+function startTimer() {
+    milliseconds = 0;
+    seconds = 0;
+
+    pauseTimer(timer);
+    timer = setInterval(() => { incrementTimer(); }, 10);
+}
+
+function pauseTimer() {
+    clearInterval(timer);
+}
+
+function incrementTimer() {
+    if((milliseconds += 10) == 1000) {
+        milliseconds = 0;
+        seconds++;
+    }
+    if(seconds > 120) {
+        seconds = 0;
+        toggleGameState(false);
+    }
+
+    document.getElementById('seconds').innerText = returnData(seconds);
+    document.getElementById('milliseconds').innerText = returnData(milliseconds);
+}
+  
+function returnData(input) {
+    return input > 10 ? input : `0${input}`;
 }
 
 function start() {
@@ -343,11 +428,13 @@ function start() {
     MainLoop.setUpdate(update).start();
     gameStarted = true;
     gameRunning = true;
-    startTime = Date.now();
+    
+    // Start the timer
+    startTimer();
 }
 
 document.querySelectorAll(".board").forEach( (board) => {board.addEventListener('click', keyPress, true)});
-document.getElementById("start").addEventListener('click', toggleGameState);
+document.getElementById("start").addEventListener('click', (e => {toggleGameState(false); }));
 continueButton.addEventListener('click', nextBoard);
 
 // Pause the scrolling of the boards if the page goes out of focus
@@ -357,7 +444,7 @@ window.addEventListener('focus', function() {
 
 window.addEventListener('blur', function() {
     focused = false;
-})
+});
   
 
 

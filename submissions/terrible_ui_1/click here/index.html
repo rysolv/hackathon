@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIME TO MOVE</title>
+
+    <style>
+        body {
+            padding: 5rem;
+            background-image: url(img/dancing-hamster-gif.gif);
+            background-repeat: repeat;
+            
+        }
+        h1 {
+            color: springgreen;
+        }
+        h3 {
+            color: violet;
+        }
+        h4 {
+            color: deepskyblue;
+        }
+        
+    </style>
+</head>
+
+
+
+<body onload="generateRandomTabIndex()">
+
+    <div id="checkBoxDiv">
+        <input type="checkbox" tabindex="1">
+    </div>
+    
+    <h1>Are we having fun yet?</h1>
+    <form>
+        <h3>Date</h3>
+        <div id="dateDiv" onmouseover="timeToMoveRight('dateDiv')" onmouseout="timeToMoveLeft('dateDiv')" style="width: 100px; height: 100px;">
+            <input tabindex="4" type="date">
+        </div>
+        <h4>Time</h4>
+        <div id="timeDiv" onmouseover="timeToMoveRight('timeDiv')" onmouseout="timeToMoveLeft('timeDiv')" style="width: 100px;">
+            <input tabindex="3" type="time">
+        </div>
+        <br>
+        <br>
+        
+        <div id="submitDiv" onmouseover="timeToMoveRight('submitDiv')" onmouseout="timeToMoveLeft('submitDiv')" style="width: 100px;">
+            <button tabindex="2" id="submit" type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+
+</html>
+
+<script>
+    function timeToMoveRight(idOfElementToMove){
+        console.log(1)
+        document.getElementById(idOfElementToMove).style.padding = "0px 0px 0px 1200px";
+    }
+    function timeToMoveLeft(idOfElementToMove){
+        document.getElementById(idOfElementToMove).style.padding = "0px 1400px 0px 0px";
+    }
+
+    function generateRandomTabIndex(){
+        let tabIndexArray = ["1", "2", "3", "4"];
+        let divArrayIdValues = ['checkBoxDiv', 'dateDiv', 'timeDiv', 'submitDiv'];
+
+        shuffleArray(tabIndexArray);
+
+        for(let i=0; i<divArrayIdValues.length; i++){
+            document.getElementById(divArrayIdValues[i]).tabIndex = tabIndexArray[i];
+        }
+
+    }
+
+
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+</script>

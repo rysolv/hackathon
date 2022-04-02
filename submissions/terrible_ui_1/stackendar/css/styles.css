@@ -17,6 +17,10 @@ body {
     display: none;
 }
 
+.instructions {
+    max-width: 300px;
+}
+
 .game-area {
     display: flex;
     flex-flow: column wrap;
@@ -34,7 +38,7 @@ body {
 }
 
 .board {
-    margin-bottom: 35px;
+    margin-bottom: 0px;
 }
 
 table, th, td {

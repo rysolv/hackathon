@@ -21,8 +21,6 @@ class Board {
     }
 
     completeBoard(gameState) {
-        let endTime = Date.now();
-
         if(gameState == this.STATE_WIN) {
             addTimeToOutput(this, true);
             this.completed = true;
@@ -192,7 +190,6 @@ class Board {
 
         // Deselect any cells currently selected and clear out the board's output area
         document.querySelectorAll("#" + this.divId + " table tr .selected").forEach((e) => { e.classList.remove("selected"); });
-        document.getElementById(this.divId + "Output").innerHTML = "";
 
         // The number of ticks since a block was updated
         this.ticksSinceLastUpdate = 0;
@@ -275,11 +272,7 @@ function getActiveBoard() {
     }
 }
 
-function resetBoard() {
-    getActiveBoard().reset();
-}
-
-function keyPress() {
+function boardClick() {
     if(!gameRunning)
         return;
 
@@ -293,7 +286,7 @@ function addTimeToOutput(board, won) {
 
     // Return the alphabetical month name if the first board is being processed
     if(board.name == "month") {
-        month = monthNames[board.getValue(row, col) -1];
+        month = monthNames[board.getValue(row, col) - 1];
     }
     else if(board.name == "day") {
         day = board.getValue(row, col);
@@ -306,7 +299,7 @@ function addTimeToOutput(board, won) {
 
 function toggleButtons(running) {
     if(running) {
-        document.getElementById("start").textContent = "Stop game";
+        document.getElementById("start").textContent = "Quit game";
         continueButton.classList.remove("hidden");
     }
     else {
@@ -323,21 +316,38 @@ function toggleGameState(outputDate = false) {
 
         // Output the date if the game is won
         if(outputDate) {
-            let minutes = 0, hour = 0, ampm = "";
+            let minutes = 0, hour = 0, ampm = "", inFront = false;
 
             if((milliseconds / 10) >= 60) {
                 hour++;
                 milliseconds -= 600;
                 console.log(milliseconds);
-                minutes = milliseconds % 100;
+
+                if(milliseconds < 100) {
+                    minutes = (milliseconds / 10).toString().split('').reverse().join('');
+                }
+                else {
+                    minutes = (milliseconds / 10);
+                }
             }
             else {
-                minutes = milliseconds % 100;
+                minutes = milliseconds / 10;
             }
 
             //let minutes = ((milliseconds / 10) >= 60 ?);
             hour += (seconds > 60 ? seconds - 60 : seconds);
+
             ampm = (seconds > 60 ? "pm" : "am");
+
+            if(hour > 12) {
+                hour -= 12;
+                ampm = (ampm == "pm" ? "am" : "pm");
+            }
+
+            if(!(minutes instanceof String) && minutes.toString().length == 1) {
+                minutes *= 10;
+            }
+
             timeOutput.textContent = "Selected date/time: " + (month + " " + day + ", " + year) + " " + hour + ":" + minutes + ampm;
         }
 
@@ -433,7 +443,7 @@ function start() {
     startTimer();
 }
 
-document.querySelectorAll(".board").forEach( (board) => {board.addEventListener('click', keyPress, true)});
+document.querySelectorAll(".board").forEach( (board) => {board.addEventListener('click', boardClick, true)});
 document.getElementById("start").addEventListener('click', (e => {toggleGameState(false); }));
 continueButton.addEventListener('click', nextBoard);
 

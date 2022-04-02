@@ -1,0 +1,13 @@
+{
+	
+	"name": "Bouncing Month and Day",
+	"description": "this is for terrible_ui hackathon",
+	"link": "https://example.com (Optional if hosted)",
+	
+	"contributors": [
+		{
+			"name": "Colin Fitzgerald",
+			"github": "https://github.com/ColinC0de"
+		}
+	]
+}

@@ -5,10 +5,26 @@
     </head>
     <body id="page">
         <main>
-            <div id="month">
-            </div>
-            <div id="monthOutput">
+            <div class="game-area">
+                <h2>Stackendar</h2>
+                <div class="buttons">
+                    <button id="start">Start game</button>
+                    <button id="continue" class="hidden" disabled>Continue</button>
+                </div>
 
+                <div>
+                    <p id="gameStatusOutput"></p>
+                    <p id="timeOutput"></p>
+                </div>
+
+                <div id="month" class="board"> </div>
+                <div id="monthOutput"> </div>
+
+                <div id="day" class="board"> </div>
+                <div id="dayOutput"> </div>
+
+                <div id="year" class="board"> </div>
+                <div id="yearOutput"> </div>
             </div>
         </main>
 

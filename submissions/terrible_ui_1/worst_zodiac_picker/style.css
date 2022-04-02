@@ -1,0 +1,38 @@
+/* body {
+    background: rgb(255,213,54);
+    background: linear-gradient(90deg, rgba(255,213,54,1) 0%, rgba(105,112,0,1) 21%, rgba(110,232,114,1) 35%, rgba(156,97,164,1) 54%, rgba(65,0,255,1) 100%);
+} */
+
+h1, button {
+    font-family: 'UnifrakturMaguntia', cursive;
+    color:fuchsia;
+    text-align: right;
+}
+
+h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: thistle;
+}
+
+#zodiac-signs img { 
+   width:200px;         
+}
+
+/* #zodiac-signs img:hover { 
+    width:300px;       
+ } */
+
+ .day-box {
+     display: inline-block;
+     width: 20px;
+     background-color: blue;
+     color: blue;
+ }
+
+ .day-box:hover {
+    color: midnightblue;
+ }
+
+.hidden {
+    display: none;
+}

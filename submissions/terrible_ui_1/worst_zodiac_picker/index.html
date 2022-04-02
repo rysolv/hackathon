@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date/Time Picker</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Cedarville+Cursive&family=Love+Light&family=Press+Start+2P&family=Rubik+Glitch&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+    <h1>Welcome to [object Object]</h1>
+
+    <section id="zodiac-picker">
+        <h2>Select the sign with the correct date range:</h2>
+        <div id="zodiac-signs">
+            <img id="aries" src="assets/aries.png">
+            <img id="taurus" src="assets/taurus.png">
+            <img id="gemini" src="assets/gemini.png">
+            <img id="cancer" src="assets/cancer.png">
+            <img id="leo" src="assets/leo.png">
+            <img id="virgo" src="assets/virgo.png">
+            <img id="libra" src="assets/libra.png">
+            <img id="scorpio" src="assets/scorpio.png">
+            <img id="sagittarius" src="assets/sagitarius.png">
+            <img id="capricorn" src="assets/capricorn.png">
+            <img id="aquarius" src="assets/aquarius.png">
+            <img id="pisces" src="assets/pisces.png">
+        </div>
+        <p>
+            <button id="reveal-dates-btn">Show date ranges</button>
+        </p>
+    </section>
+
+    <section id="day-picker" class="hidden">
+        <h2>Select the desired day of the zodiac's cycle:</h2>
+        <p id="day-container"></p>
+    </section>
+
+    <section id="time-picker" class="hidden">
+        <h2>Select the time of day:</h2>
+        <p id="random-time"></p>
+        <p>
+            <button id="early">Too early</button> <button id="late">Too late</button> <button id="approve-time">This is the correct time!</button>
+        </p>
+    </section>
+
+    <section id="results" class="hidden">
+        <p>Your result is: <span id="final-date-time"></span></p>
+        <button id="clear-all">Try again?</button>
+    </section>
+
+
+
+</body>
+
+</html>

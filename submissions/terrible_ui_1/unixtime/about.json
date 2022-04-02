@@ -1,0 +1,11 @@
+{
+	"name": "sample",
+	"description": "a more precise date/time selector for terrible_ui hackathon",
+	"link": "https://example.com (Optional if hosted)",
+	"contributors": [
+		{
+			"name": "Yingyi Mo",
+			"github": "https://github.com/yingmo55"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    cursor: no-drop;
+}
+
+th, td {
+    background-color: #190b92;
+}
+
+td {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    color: white;
+    font-size: 2.0rem;
+    font-family: 'Calibri', sans-serif;
+}
+
+td.selected {
+    background-color: #128fc9;
+}
+

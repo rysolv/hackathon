@@ -1,0 +1,11 @@
+{
+	"name": "Zodiac Date/Time Picker",
+	"description": "Zodiac solution for terrible_ui hackathon",
+	"link": "",
+	"contributors": [
+		{
+			"name": "Nikolai Humphrey-Blanco",
+			"github": "https://github.com/nik-seb"
+		}
+	]
+}

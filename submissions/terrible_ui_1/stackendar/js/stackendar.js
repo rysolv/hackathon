@@ -1,3 +1,4 @@
+/* The Board class contains all of the info and functions of each game board */
 class Board {
     STATE_LOSS = 0;
     STATE_WIN = 1;
@@ -15,11 +16,12 @@ class Board {
         this.completed = false;
         this.reverse = false;
 
+        // Initialize the board when it is first added
         this.reset();
-
         this.create();
     }
 
+    // Completes the board in either a win or loss state
     completeBoard(gameState) {
         if(gameState == this.STATE_WIN) {
             addTimeToOutput(this, true);
@@ -32,6 +34,7 @@ class Board {
         }
     }
 
+    // Gets the selected cell's index in the given row
     getSelectedCellIdInRow(row) {
         for(let i = 0; i < this.cols; i++) {
             if(this.cells[row][i] == 1) {
@@ -42,16 +45,19 @@ class Board {
         return -1;
     }
 
-    // Returns the index of the highest stacked row
+    // Returns the index of the highest stacked row. Returns the last row if the game
+    // was just won 
     getHighestRowId(won) {
         return this.lastCompletedRow + (won ? 0 : 1);
     }
 
-    // Returns the index of the highest stacked column
+    // Returns the index of the highest stacked column. Uses the last row if the game
+    // was just won 
     getHighestColId(won) {
         return this.getSelectedCellIdInRow(this.lastCompletedRow + (won ? 0 : 1));
     }
 
+    // Gets the cell's value at position [row][col]
     getValue(row, col) {
         return this.values[row][col];
     }
@@ -68,6 +74,8 @@ class Board {
         }
     }
 
+    // Checks the stack every time the player places a block and determines if the stack
+    // is still being properly stacked or not
     checkStack() {
         // If the player is placing their first block, don't check the stack
         // as any column is a valid spot
@@ -86,16 +94,18 @@ class Board {
             }
         }
 
+        // If the player has correctly stacked a board all the way to the top,
+        // end the board
         if(stackingCorrectly && this.completed) {
             this.completeBoard(this.STATE_WIN);
         }
+        // If the player has incorrectly stacked a board, they lose
         else if(!stackingCorrectly) {
             this.completeBoard(this.STATE_LOSS);
         }
-
-        console.log(stackingCorrectly);
     }
 
+    // This function is called every time a player clicks on a board
     handleClick() {
         // If all rows have been checked, the board is completed
         if(this.lastCompletedRow - 1 < 0) {
@@ -104,11 +114,13 @@ class Board {
 
         this.checkStack();
 
+        // Move the last completed row "up" one row and disable the continue button as
+        // they have at least one block stacked
         this.lastCompletedRow--;
-
         continueButton.disabled = false;
     }
 
+    // Called every tick and updates the currently selected cell if necessary
     updateBoard() {
         if(this.completed)
             return;
@@ -152,6 +164,7 @@ class Board {
         }
     }
 
+    // Creates the board and adds it to the appropriate <div> on the HTML page
     create() {
         let tableHtml = "";
         tableHtml += "<table>";
@@ -177,6 +190,7 @@ class Board {
         document.getElementById(this.divId).innerHTML = tableHtml;
     }
 
+    // Resets the board to make it ready for another attempt
     reset() {
         // Reset the board's completion state if needed
         if(this.completed) {
@@ -202,12 +216,12 @@ class Board {
             this.cells[i] = Array(this.cols).fill(0);
         }
 
-        console.log(this);
         // Set the first cell of the last row to selected when the board is created
         this.cells[this.rows - 1][0] = 1;
     }
 }
 
+// Global constants and variables used
 const FPS = 60;
 let sounds = [new Audio("assets/woohoo.mp3")];
 let startTime = null;
@@ -215,9 +229,12 @@ let gameStarted = false;
 let gameRunning = false;
 let focused = true;
 
+// Timer variables
 let timer;
 let seconds = 0, milliseconds = 0;
 
+// Value arrays for the three boards. The month board has an extra
+// array as the numbers are converted to month names when the game is over
 let monthValues = [[1, 2, 3, 4],
                    [5, 6, 7, 8],
                    [9, 10, 11, 12]];
@@ -240,26 +257,31 @@ let yearValues = [[2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
                   [1933, 1934, 1935, 1936, 1937, 1938, 1939, 1940, 1941, 1942],
                   [1923, 1924, 1925, 1926, 1927, 1928, 1929, 1930, 1931, 1932]]
 
+// Create the new boards
 let board1 = new Board("month", "month", 3, 4, [20, 20, 20], monthValues);
 let board2 = new Board("day", "day", 2, 16, 3, dayValues);
 let board3 = new Board("year", "year", 10, 10, 40, yearValues);
-
 let boards = [board1, board2, board3];
 
+// Easy access to commonly used elements
+let startButton = document.getElementById("start");
 let continueButton = document.getElementById("continue");
 let statusOutput = document.getElementById("gameStatusOutput");
 let timeOutput = document.getElementById("timeOutput");
 
+// Variables to store the selected month, day, and year
 let month = "";
 let day   = "";
 let year  = "";
 
+// Calls the active board's update function every tick
 function update() {
     if(focused) {
         getActiveBoard().updateBoard();
     }
 }
 
+// Returns the currently active board
 function getActiveBoard() {
     if(!board1.completed) {
         return board1;
@@ -272,6 +294,7 @@ function getActiveBoard() {
     }
 }
 
+// Handles a click on a board. Updates the board and plays the "woohoo" sound
 function boardClick() {
     if(!gameRunning)
         return;
@@ -280,6 +303,8 @@ function boardClick() {
     sounds[0].cloneNode(true).play();
 }
 
+// If a board was completed, this function saves the month/day/year selected from
+// the won board to a variable
 function addTimeToOutput(board, won) {
     let row = board.getHighestRowId(won);
     let col = board.getHighestColId(won);
@@ -297,17 +322,21 @@ function addTimeToOutput(board, won) {
     
 }
 
+// Updates the start/quit and continue buttons depending on whether or not
+// the game is running
 function toggleButtons(running) {
     if(running) {
-        document.getElementById("start").textContent = "Quit game";
+        startButton.textContent = "Quit game";
         continueButton.classList.remove("hidden");
     }
     else {
-        document.getElementById("start").textContent = "Start game";
+        startButton.textContent = "Start game";
         continueButton.classList.add("hidden");
     }
 }
 
+// Changes the game's state from not running to running and vice versa. Also
+// handles showing the selected date/time if all boards were successfully completed
 function toggleGameState(outputDate = false) {
     if(gameRunning) {
         for(let i = 0; i < boards.length; i++) {
@@ -321,7 +350,6 @@ function toggleGameState(outputDate = false) {
             if((milliseconds / 10) >= 60) {
                 hour++;
                 milliseconds -= 600;
-                console.log(milliseconds);
 
                 if(milliseconds < 100) {
                     minutes = (milliseconds / 10).toString().split('').reverse().join('');
@@ -351,6 +379,7 @@ function toggleGameState(outputDate = false) {
             timeOutput.textContent = "Selected date/time: " + (month + " " + day + ", " + year) + " " + hour + ":" + minutes + ampm;
         }
 
+        // Pause the game and stop the timer if a game was completed
         gameRunning = false;
 
         pauseTimer();
@@ -371,6 +400,7 @@ function toggleGameState(outputDate = false) {
     }
 }
 
+// Returns true if all boards were completed, false otherwise
 function allBoardsCompleted() {
     let b = true;
     for(let i = 0; i < boards.length; i++) {
@@ -382,11 +412,12 @@ function allBoardsCompleted() {
     return b;
 }
 
+// Activates the next uncompleted board. If all boards were completed,
+// end the game
 function nextBoard() {
     let b = getActiveBoard();
     let row = b.getHighestRowId(false);
     let col = b.getHighestColId(false);
-    console.log(row + " | " + col);
     addTimeToOutput(b, false);
 
     for(let i = 0; i < b.cols; i++) {
@@ -432,6 +463,7 @@ function returnData(input) {
     return input > 10 ? input : `0${input}`;
 }
 
+// Start the game
 function start() {
     // Set the FPS of the game and start it. Also save the start time of the game
     MainLoop.setMaxAllowedFPS(FPS);
@@ -443,8 +475,9 @@ function start() {
     startTimer();
 }
 
+// Add event listeners to various <div>s and buttons
 document.querySelectorAll(".board").forEach( (board) => {board.addEventListener('click', boardClick, true)});
-document.getElementById("start").addEventListener('click', (e => {toggleGameState(false); }));
+startButton.addEventListener('click', (e => {toggleGameState(false); }));
 continueButton.addEventListener('click', nextBoard);
 
 // Pause the scrolling of the boards if the page goes out of focus

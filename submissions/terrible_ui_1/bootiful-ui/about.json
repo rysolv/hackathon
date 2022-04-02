@@ -1,0 +1,11 @@
+{
+	"name": "Bootiful UI",
+	"description": "Breathtaking date and time selector for Terrible UI hackathon",
+	"link": "https://bootiful-ui.netlify.app/",
+	"contributors": [
+		{
+			"name": "Elise Muellerleile",
+			"github": "https://github.com/eliamue"
+		}
+	]
+}

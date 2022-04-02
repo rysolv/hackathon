@@ -1,0 +1,74 @@
+@font-face {
+    font-family: VT323;
+    src: url("../fonts/VT323.ttf");
+    font-weight: normal;
+    font-display: swap;
+}
+
+/* Generic component classes */
+.hidden {
+    display: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+
+body {
+    overflow-x: scroll;
+}
+
+.buttons {
+    margin-bottom: 0.5rem;
+}
+
+.game-area {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.game-area h2 {
+    margin-bottom: 0.5rem;
+    font-family: VT323;
+    font-size: 3rem;
+}
+
+.instructions {
+    max-width: 300px;
+}
+
+#timerOutput {
+    text-align: center;
+}
+
+.board {
+    margin-bottom: 0px;
+}
+
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    cursor: pointer;
+}
+
+th, td {
+    background-color: #190b92;
+}
+
+td {
+    height: 50px;
+    width: 50px;
+    min-width: 50px;
+    text-align: center;
+    color: white;
+    font-size: 2.0rem;
+    font-family: 'Calibri', sans-serif;
+}
+
+td.selected {
+    background-color: #128fc9;
+}
+

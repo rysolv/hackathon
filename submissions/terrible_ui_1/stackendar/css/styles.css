@@ -5,24 +5,23 @@
     font-display: swap;
 }
 
+/* Generic component classes */
+.hidden {
+    display: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+
 body {
     overflow-x: scroll;
 }
 
 .buttons {
     margin-bottom: 0.5rem;
-}
-
-.hidden {
-    display: none;
-}
-
-.instructions {
-    max-width: 300px;
-}
-
-.bold {
-    font-weight: bold;
 }
 
 .game-area {
@@ -35,6 +34,10 @@ body {
     margin-bottom: 0.5rem;
     font-family: VT323;
     font-size: 3rem;
+}
+
+.instructions {
+    max-width: 300px;
 }
 
 #timerOutput {

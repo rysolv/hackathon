@@ -21,6 +21,10 @@ body {
     max-width: 300px;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .game-area {
     display: flex;
     flex-flow: column wrap;

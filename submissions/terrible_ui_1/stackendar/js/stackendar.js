@@ -258,9 +258,9 @@ let yearValues = [[2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
                   [1923, 1924, 1925, 1926, 1927, 1928, 1929, 1930, 1931, 1932]]
 
 // Create the new boards
-let board1 = new Board("month", "month", 3, 4, [20, 20, 20], monthValues);
-let board2 = new Board("day", "day", 2, 16, 3, dayValues);
-let board3 = new Board("year", "year", 10, 10, 40, yearValues);
+let board1 = new Board("month", "month", 3, 4, [8, 12, 20], monthValues);
+let board2 = new Board("day", "day", 2, 16, 5, dayValues);
+let board3 = new Board("year", "year", 10, 10, 10, yearValues);
 let boards = [board1, board2, board3];
 
 // Easy access to commonly used elements
@@ -488,6 +488,3 @@ window.addEventListener('focus', function() {
 window.addEventListener('blur', function() {
     focused = false;
 });
-  
-
-

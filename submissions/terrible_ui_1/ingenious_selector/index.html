@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIME</title>
+
+    <style>
+        body {
+            padding: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Select a time that works best</h1>
+    <h3>Date & time selector</h3>
+    <br>
+    <br>
+    <input type="range" min="1" max="8640000000000000" value="0" class="slider" id="time-range">
+    <h3>Selected Time:
+        <span id="parsed-time"></span>
+    </h3>
+    <div id="video-container" style="display: none; justify-content: flex-end;">
+        <video autoplay loop muted src="static/dance.mp4"></video>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

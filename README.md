@@ -1,6 +1,7 @@
 # Past
 
--   Nothing here yet
+### Terrible UI: Worst Time/Date Selector
+-   https://blog.rysolv.com/worst-time-date-selectors-in-the-world
 
 # Upcoming
 

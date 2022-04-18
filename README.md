@@ -1,22 +1,23 @@
 # Past
 
-### Terrible UI: Worst Time/Date Selector
+### Terrible UI #1: Worst Time/Date Selector
+
 -   https://blog.rysolv.com/worst-time-date-selectors-in-the-world
 
 # Upcoming
 
 <p align="center">
-  <img src="./assets/terrible_ui.png" />
+  <img src="./assets/terrible_ui_2.png" />
 </p>
 
-## Terrible UI Hackathon #1
+## Terrible UI Hackathon #2
 
 ```
-When: 4/01/22 @ 6:00PM EST
-Challenge: Build the worst Date/Time Selector
+When: 5/20/22 @ 6:00PM EST
+Challenge: Build the worst Phone Number input
 ```
 
-Come join us April 1 to build the worst UI features you can imagine! Inspired by the [Worst Volume Control](https://uxdesign.cc/the-worst-volume-control-ui-in-the-world-60713dc86950) competition a few years ago on reddit. Each month we'll select a new UI feature, and compete to make it as terrible as possible.
+Come join us May 20, 2022 to build the worst UI features you can imagine! Each month we'll select a new UI feature, and compete to make it as terrible as possible.
 
 ## How to join
 
@@ -29,7 +30,7 @@ Don't have discord, no problem. Just submit a PR following the #submission instr
 
 ## Schedule
 
-The hackathon starts Friday 4/1/22 at 6:00pm. All submissions are due Saturday 4/2/22 6:00pm.
+The hackathon starts Friday 5/20/22 at 6:00pm. All submissions are due Saturday 5/21/22 6:00pm.
 
 #### Friday @ 6:00pm
 
@@ -92,4 +93,4 @@ The hackathon starts Friday 4/1/22 at 6:00pm. All submissions are due Saturday 4
 
 ## Problems?
 
-Best bet is to ask in the Discord. But feel free to email tyler@rysolv.com as well. 
+Best bet is to ask in the Discord. But feel free to email tyler@rysolv.com as well.

@@ -52,7 +52,7 @@ The hackathon starts Friday 5/20/22 at 6:00pm. All submissions are due Saturday 
 
 1. Fork the repo (click the fork button)
 2. Clone down the codebase
-3. Create a new folder (i.e. `coolest_project`) in the `/submissions/terrible_u1_1` directory.
+3. Create a new folder (i.e. `coolest_project`) in the `/submissions/terrible_u1_2` directory.
 4. That folder should contain all the code, as well as an `about.json`. Feel free to copy the `./sample` folder to get started.
 
     ```

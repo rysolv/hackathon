@@ -1,0 +1,11 @@
+{
+	"name": "gravity-spinner",
+	"description": "A phone number input that spins and is effected by gravity.",
+	"link": "https://badui-phone-input.web.app/",
+	"contributors": [
+		{
+			"name": "Kyle Smith",
+			"github": "https://github.com/KyleSmith0905"
+		}
+	]
+}

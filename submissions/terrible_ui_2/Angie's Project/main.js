@@ -1,27 +1,27 @@
-const element = document.getElementById("select"); // Variable from HTML "Select" Button
-element.addEventListener("click", myFunction); // "Select" Listener, (on "click," run myFunction)
-let phone_number=[];// Array to hold phone
+const selectButton = document.getElementById("select"); // "Select" Button
+selectButton.addEventListener("click", addNumber); // "Select" Listener, (on "click," run myFunction)
+let phone_number=[]; // Array to hold phone number
 // Select's Click listener
-function myFunction() {
+function addNumber() {
     // When select is clicked, add the current value to the array.
-    phone_number.push(slider.value);
-  console.log(phone_number);
-  document.getElementById("result").innerHTML = "Current: " + phone_number.join('');
+    phone_number.push(slider.value); 
+    // Also update on screen phone number
+    document.getElementById("result").innerHTML = "Current: " + phone_number.join(''); 
 } 
 
-const element2 = document.getElementById("clear"); // Variable from HTML "Select" Button
-element2.addEventListener("click", clearCache); // "Select" Listener, (on "click," run myFunction)
+const clearButton = document.getElementById("clear"); // "Select" Button variable
+clearButton.addEventListener("click", clearCache); // "Select" Listener, (on "click," run myFunction)
 
 // Select's Click listener
 function clearCache() {
     // When select is clicked, clear the array
     phone_number = [];
-  console.log(phone_number);
-  document.getElementById("result").innerHTML = "Result of the phone number will be submitted here.";
+    // Change element back to default message
+    document.getElementById("result").innerHTML = "Result of the phone number will be submitted here.";
 } 
 
-const element3 = document.getElementById("submit"); // Variable from HTML "Select" Button
-element3.addEventListener("click", submitPhoneNumber); // "Select" Listener, (on "click," run myFunction)
+const submitButton = document.getElementById("submit"); // Variable from HTML "Select" Button
+submitButton.addEventListener("click", submitPhoneNumber); // "Select" Listener, (on "click," run myFunction)
 
 // Submit's Click listener
 function submitPhoneNumber() {
@@ -43,6 +43,6 @@ slider.oninput = function() {
   output.innerHTML = this.value;
 }
 /**
- * End of code taken from: https://www.w3schools.com/howto/howto_js_rangeslider.asp
+ * End of code sourced from: https://www.w3schools.com/howto/howto_js_rangeslider.asp
  */
 

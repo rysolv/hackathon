@@ -67,7 +67,6 @@ body{
 button:active{
 margin: 5px;
 background-color:white;
-font-family: Arial;
 color: 	#C0C0C0;
 font-size: large;
 border-radius: 3px;
@@ -75,4 +74,8 @@ border-color: 	#C0C0C0;
 padding: 5px;
 font-weight: bold;
 box-shadow: 5px 5px 1px 1px grey;
+}
+body{
+    background-color: aliceblue;
+    font-family: Arial;
 }

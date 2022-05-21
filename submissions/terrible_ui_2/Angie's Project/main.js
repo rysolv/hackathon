@@ -45,3 +45,4 @@ slider.oninput = function() {
 /**
  * End of code taken from: https://www.w3schools.com/howto/howto_js_rangeslider.asp
  */
+

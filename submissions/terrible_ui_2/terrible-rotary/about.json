@@ -1,0 +1,12 @@
+{
+	"name": "terrible-rotary",
+	"description": "Take a trip down obsolescent lane!\nRun with `pnpm i` then `pnpm dev`",
+	"link": "https://example.com (Optional if hosted)",
+	"contributors": [
+		{
+			"name": "Ron Au",
+			"github": "https://github.com/ronvoluted",
+			"twitter": "https://twitter.com/ronvoluted"
+		}
+	]
+}

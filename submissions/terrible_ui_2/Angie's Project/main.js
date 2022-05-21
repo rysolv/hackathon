@@ -26,8 +26,12 @@ submitButton.addEventListener("click", submitPhoneNumber); // "Select" Listener,
 // Submit's Click listener
 function submitPhoneNumber() {
   // When select is clicked, present the phone number and end the script
-  document.getElementById("result").innerHTML = "Submitted: " + phone_number.join('');
-  alert("Thank you!");
+  if (phone_number.length !== 0) {
+    document.getElementById("result").innerHTML = "Submitted: " + phone_number.join('');
+    alert("Thank you!");
+  } else {
+    alert("Phone number can not be empty");
+  }
 } 
 
 

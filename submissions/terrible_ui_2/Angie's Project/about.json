@@ -1,0 +1,11 @@
+{
+	"name": "Clicker ",
+	"description": "Angela's solution for terrible_ui hackathon. With a button that is constantly running through numbers 0-9, click the button when your desired number is shown. ",
+	"link": "https://example.com (Optional if hosted)",
+	"contributors": [
+		{
+			"name": "Angela Do",
+			"github": "https://github.com/AngelaDo45/"
+		}
+	]
+}

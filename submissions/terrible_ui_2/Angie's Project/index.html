@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="icon" href="https://img.icons8.com/plasticine/100/000000/contact-card.png">
+    <title>Phone Number</title>
+
+    <style>
+        body {
+            padding: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Select a Phone Number</h1>
+   
+        <h3>Enter the digits of your phone number:</h3>
+        <!-- Slider code source: https://www.w3schools.com/howto/howto_js_rangeslider.asp-->
+        <div class="slidecontainer">
+            <input type="range" min="0" max="9" value="0" class="slider" id="myRange">
+          </div>
+        <p>Value: <span id="demo"></span></p>
+        <button id="select">Select</button>
+        <br>
+        <button id="submit">Submit</button>
+        <button id="clear">Clear</button>
+        <p id="result" class="result" name="result">Phone number will be displayed here.</p>
+
+        <script src="main.js"></script>
+        
+</body>
+</html>

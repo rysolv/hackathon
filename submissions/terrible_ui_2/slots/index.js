@@ -52,22 +52,58 @@ const columns = document.getElementsByClassName('column');
 const lockRow = document.getElementById('lockRow');
 numbers.forEach((el, i) => {
 	const lock = document.createElement('div');
-	lock.classList.add('lockButton');
+	lock.classList.add('lockButton', 'unlocked');
+
+	if (i === 3 || i === 6) {
+		const lockSpace = document.createElement('div');
+		lockSpace.classList.add('lockSpace');
+		lockRow.append(lockSpace);
+	}
 
 	lock.onclick = () => {
 		numbers[i].locked = !numbers[i].locked;
-		lock.style.backgroundColor = numbers[i].locked ? 'green' : 'red';
-		console.log(numbers[i].locked);
+
+		if (numbers[i].locked) {
+			lock.classList.add('locked');
+			lock.classList.remove('unlocked');
+		} else {
+			lock.classList.add('unlocked');
+			lock.classList.remove('locked');
+		}
 	};
 
 	lockRow.append(lock);
 });
 
 // Get Lever and add start function
-const lever = document.getElementById('ball');
-lever.onclick = () => {
+const ball = document.getElementById('ball');
+const shaft = document.getElementById('shaft');
+ball.onclick = () => {
+	// ball pull animation
+	ball.classList.remove('bounce');
+	ball.offsetWidth = ball.offsetWidth;
+	ball.classList.add('bounce');
+
+	shaft.classList.remove('shrink');
+	shaft.offsetWidth = shaft.offsetWidth;
+	shaft.classList.add('shrink');
+
 	console.log('Start game');
 	startGame();
+};
+
+// Get submit button
+const submit = document.getElementById('submit');
+submit.onclick = () => {
+	const number = numbers.reduce((acc, el, i) => {
+		if (i === 3 || i === 6) {
+			acc.push('-');
+		}
+		acc.push(el.value);
+		return acc;
+	}, []);
+
+	alert(`Submitted ${number.join('')}`);
 };
 
 // Spin wheel

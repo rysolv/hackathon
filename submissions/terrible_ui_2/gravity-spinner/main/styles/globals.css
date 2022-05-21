@@ -1,0 +1,94 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  background-color: hsl(0deg 0% 6%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1em;
+}
+
+@media screen and (max-width: 32em) {
+  header {
+    flex-direction: column;
+    gap: 0em;
+    padding-bottom: 1em;
+  }
+}
+
+.standardInputs {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 33em;
+  margin: 2em auto;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.centered {
+	display: block;
+  text-align: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.numbersContainer {
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.phoneNumbers {
+  height: 100%;
+}
+
+.phoneNumbers > p {
+  font-size: 4em;
+  font-weight: bold;
+  margin: 0em;
+  padding: 0em 0.15em;
+  user-select: none;
+  background-color: hsla(0deg, 0%, 100%, 0.02);
+  border-top: 1px solid hsla(0deg, 0%, 100%, 0.05);
+  border-bottom: 1px solid hsla(0deg, 0%, 100%, 0.05);
+}
+
+@media screen and (max-width: 600px) {
+  .phoneNumbers > p {
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .phoneNumbers > p {
+    font-size: 2em;
+    padding: 0em 0.1em;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .phoneNumbers > p {
+    font-size: 1.7em;
+    padding: 0em 0.1em;
+  }
+}
+
+.phoneNumbers > p.active {
+  background-color: hsla(0deg, 0%, 100%, 0.1);
+}

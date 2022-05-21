@@ -1,12 +1,10 @@
-body{
-    text-align: center;
-}
+/* Start of code sourced from: https://www.w3schools.com/howto/howto_js_rangeslider.asp */
 .slidecontainer {
     width: 100%; /* Width of the outside container */
   }
   
   /* The slider itself */
-  .slider {
+.slider {
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
     width: 100%; /* Full-width */
@@ -39,20 +37,25 @@ body{
     background: #04AA6D; /* Green background */
     cursor: pointer; /* Cursor on hover */
   }
-  button{
+/* End of code sourced from: https://www.w3schools.com/howto/howto_js_rangeslider.asp */
+body{
+    text-align: center;
+}
+
+button{
     margin: 5px;
     background-color:#5ac6f2;
-      font-family: Arial;
-      color: black;
-      font-size: large;
-      border-radius: 3px;
-      border-color: #06568f;
-      padding: 5px;
-      font-weight: bold;
-      box-shadow: 5px 5px 1px 1px #06568f;
-  }
+    font-family: Arial;
+    color: black;
+    font-size: large;
+    border-radius: 3px;
+    border-color: #06568f;
+    padding: 5px;
+    font-weight: bold;
+    box-shadow: 5px 5px 1px 1px #06568f;
+}
 
-  button:hover{
+button:hover{
     margin: 5px;
     background-color:#79cced;
     font-family: Arial;
@@ -63,18 +66,20 @@ body{
     padding: 5px;
     font-weight: bold;
     box-shadow: 5px 5px 1px 1px #2b6894;
-  }
-button:active{
-margin: 5px;
-background-color:white;
-color: 	#C0C0C0;
-font-size: large;
-border-radius: 3px;
-border-color: 	#C0C0C0;
-padding: 5px;
-font-weight: bold;
-box-shadow: 5px 5px 1px 1px grey;
 }
+
+button:active{
+    margin: 5px;
+    background-color:white;
+    color: 	#C0C0C0;
+    font-size: large;
+    border-radius: 3px;
+    border-color: 	#C0C0C0;
+    padding: 5px;
+    font-weight: bold;
+    box-shadow: 5px 5px 1px 1px grey;
+}
+
 body{
     background-color: aliceblue;
     font-family: Arial;

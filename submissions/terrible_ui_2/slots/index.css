@@ -1,0 +1,280 @@
+.afk {
+    position: fixed;
+    top: 5rem;
+    right: 5rem;
+    background-color: white;
+    color:rgb(24, 24, 24);
+    padding: 2rem;
+    font-size: 3rem;
+    width: 120px;
+}
+
+html {
+    background-color: rgb(24, 24, 24);
+    color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.2rem;
+    margin: .25rem;
+}
+
+#base {
+    background-color: gold;
+    border-left: 30px solid rgb(192, 163, 0);
+    border-right: 30px solid rgb(192, 163, 0);
+    height: 30px;
+    width: 40px;
+}
+
+#ball {
+    background-color: red;
+    border-bottom: 8px solid rgb(167, 0, 0);
+    border-radius: 50%;
+    border-right: 10px solid rgb(221, 0, 0);
+    height: 32px;
+    width: 30px;
+}
+
+#ball:hover {
+    cursor: pointer;
+}
+
+.header {
+    align-items: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 0 3rem 0;
+    width: 500px;
+}
+
+#lever {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 2rem;
+}
+
+.leverSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#lockRow {
+    display: flex;
+    width: 100%;
+}
+
+.lockSpace {
+    width: 10px;
+}
+
+.lockButton {
+    width: 27px;
+    height: 27px;
+    margin: .42rem;
+    border-radius: 4px;
+}
+
+.unlocked {
+    background-color: red;
+    border-right: 5px solid rgb(163, 0, 0);
+    border-bottom: 5px solid rgb(78, 0, 0);
+}
+
+.unlocked:hover {
+    background-color: rgb(255, 49, 49);
+    border-right: 5px solid rgb(233, 0, 0);
+    border-bottom: 5px solid rgb(165, 0, 0);
+}
+
+.locked {
+    background-color: green;
+    border-right: 5px solid rgb(0, 97, 0);
+    border-bottom: 5px solid rgb(0, 46, 0);
+}
+.locked:hover {
+    background-color: rgb(0, 187, 0);
+    border-right: 5px solid rgb(0, 138, 0);
+    border-bottom: 5px solid rgb(0, 88, 0);
+}
+
+.lockButton:hover {
+    cursor: pointer;
+}
+
+.neonText {   
+    display: inline-flex;
+    font-family: "Sacramento", sans-serif;
+    font-size: 3rem;
+    font-style: italic;
+    margin: 0 0 3rem 0;
+    padding: 2rem 1rem;
+    text-align: center;
+    user-select: none;
+
+    /* Neon text */
+    color: #fff;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 42px #bc13fe,
+    0 0 82px #bc13fe,
+    0 0 92px #bc13fe;
+
+    /* Neon border */
+    border: 0.1rem solid #fff;
+    border-radius: 2rem;
+    box-shadow: 0 0 .2rem #fff,
+              0 0 .2rem #fff,
+              0 0 2rem #bc13fe,
+              0 0 0.8rem #bc13fe,
+              inset 0 0 1.3rem #bc13fe;
+}
+
+.number {
+    border: 1px solid rgb(51, 51, 51);
+    color: rgb(39, 39, 39);
+    font-family: monospace;
+    font-size: 3rem;
+    font-weight: bold;
+    font-style: italic;
+    padding: .5rem;
+}
+
+.row {
+    -webkit-box-shadow: inset 0px 7px 7px 6px rgba(0,0,0,0.59); 
+    background-color: rgb(209, 209, 209);
+    border: 3px solid rgb(53, 53, 53);
+    box-shadow: inset 0px 7px 7px 6px rgba(0,0,0,0.59);
+    display: flex;
+    height: 200px;
+    overflow: hidden;
+    user-select: none;
+    width: 470px;
+}
+
+.screen {
+    display: inline-block;
+    width: auto;
+    padding: 2rem;
+    background-color: rgb(199, 179, 0);
+    border: 5px solid rgb(112, 95, 0);
+}
+
+.selector {
+    height: 78px;
+    width: 470px;
+    border: 3px solid red;
+    border-right: 10px solid rgb(145, 0, 0);
+    border-left: 10px solid rgb(145, 0, 0);
+
+    position: absolute;
+    margin: 69px 0 0 -10px;
+}
+
+#shaft {
+    background-color: rgb(87, 87, 87);
+    height: 100px;
+    width: 15px;
+    margin-top: -1rem;
+    z-index: -1;
+    border-right: 5px solid rgb(107, 107, 107);
+}
+
+#shine {
+    background-color: rgba(255, 255, 255, 0.568);
+    height: 8px;
+    width: 9px;
+    margin: 7px 0 0 7px;
+    transform: rotate(-45deg);
+    transform: skew(0deg, -25deg);
+}
+
+.slotMachine {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spacer {
+    width: 40px;
+    background-color: black;
+}
+
+#submit {
+    font-family: "Sacramento", sans-serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    user-select: none;
+
+    /* Neon text */
+    color: rgb(201, 255, 172);
+    text-shadow:
+    0 0 7px #fff,
+    0 0 42px #03da32,
+    0 0 82px #1cd603;
+
+    /* Neon border */
+    border: 0.1rem solid #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 1rem #07da00,
+    inset 0 0 1.3rem #07c201;
+}
+
+#submit:hover {
+    cursor: pointer;
+
+    color: rgb(233, 255, 221);
+    text-shadow:
+    0 0 7px #fff,
+    0 0 42px #13fe46,
+    0 0 82px #2efe13;
+   
+    box-shadow: 0 0 .2rem #fff,
+              0 0 .2rem #fff,
+              0 0 1rem #1bfe13,
+              inset 0 0 1.3rem #1bfe13;
+}
+
+/* 
+    Animations
+ */
+.bounce {
+    animation: bounce 0.75s;
+}
+
+.shrink {
+    animation: shrink 0.75s;
+}
+
+@keyframes bounce {
+    0% { 
+        transform: scale(1,1) translate3d(0, 0, 0); 
+    }
+    50%   { 
+        transform: scale(1.1, 1.1) translate3d(0, 45px, 0);
+    }
+    100% { 
+        transform: scale(1,1) translate3d(0, 0, 0); 
+    }
+}
+
+@keyframes shrink {
+    0% { transform: translate3d(0, 0, 0);}
+    50%   { transform: translate3d(0, 25px, 0);}
+    100% { transform: translate3d(0, 0, 0);}
+}

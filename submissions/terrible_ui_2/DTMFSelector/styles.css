@@ -1,0 +1,97 @@
+body {
+	padding: 12px;
+}
+
+h1, h2, h3 {
+	font-size: 110%;
+	margin: 0.3em 0em;
+}
+
+#phone_number_display {
+  display: flex;
+	margin-right: 3em;
+}
+
+#btn_reset {
+	padding: 0.5em;
+	min-width: 6.5em;
+	margin: 1em;
+}
+
+.phone_number_display_item {
+	width: 1.2em;
+	padding: 0.2em;
+}
+
+.phone_number_display_item_text_container {
+	border-bottom: 3px solid grey;
+	margin: 0.2em;
+	width: 100%;
+	text-align: center;
+	font-size: 2em;
+}
+
+#entry_panel {
+	display: flex;
+	align-items: end;
+}
+
+#entry_display {
+	background-color: #999;
+	border: 0.2em ridge #666;
+	padding: 0.5em 0.5em 0.5em 0em;
+}
+
+#entry_display td {
+	padding-right: 0.2em;
+	width: 4.0em;
+}
+
+.key_display {
+		padding: 0.9em 0em;
+		text-align: center;
+		color: white;
+		font-size: 1.25em;
+		font-weight: bold;
+	  border-width: 0.3em;
+		border-color: #669;
+		border-radius: 0.3em;
+		user-select: none;
+		border-style: groove;
+		background-color: #69c;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+}
+
+.key_display_down {
+	background-color:blue;
+}
+
+.entry_display_item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.entry_display_hz {
+}
+
+.entry_display_key {
+	height: 0.8em;
+	width: 2.5em;
+	padding-top: 0.5em;
+	padding-bottom: 1.2em;
+	text-align: center;
+  border-width: 0.3em 0.4em 0.5em 0.3em;
+	border-color: #cc9;
+	border-radius: 0.3em;
+	user-select: none;
+	border-style: outset;
+	background-image: radial-gradient(at bottom right, #fff, #cc9);
+}
+
+.key_down {
+	border-style: inset;
+	background-image: radial-gradient(at bottom right, #fff 40%, #cc9);
+}

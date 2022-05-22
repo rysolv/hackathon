@@ -1,0 +1,10 @@
+{
+    "name": "DTMFSelector",
+    "description": "Terrible phone number UI using Dual-Tone Multi-Frequency Signaling",
+    "contributors": [
+        {
+            "name": "Minor Stokes",
+            "github": "https://github.com/mmstokes"
+        }
+    ]
+}
